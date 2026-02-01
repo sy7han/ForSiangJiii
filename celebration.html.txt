@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Siang ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #ff4d6d;
+      z-index: 10;
+    }
+
+    img {
+      width: 300px;
+      margin-top: 50px;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Siang accepted to be Singyao's Valentine LESSGOOO!!! ❤️</h1>
+
+<img src="https://media.giphy.com/media/l0HU20BZ6LbSEITza/giphy.gif" />
+
+<canvas id="fireworks"></canvas>
+
+<script>
+  const canvas = document.getElementById("fireworks");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function firework() {
+    const x = random(0, canvas.width);
+    const y = random(0, canvas.height / 2);
+
+    for (let i = 0; i < 50; i++) {
+      ctx.fillStyle = `hsl(${random(0,360)},100%,50%)`;
+      ctx.fillRect(
+        x + random(-100,100),
+        y + random(-100,100),
+        3,
+        3
+      );
+    }
+  }
+
+  setInterval(firework, 600);
+</script>
+
+</body>
+</html>
